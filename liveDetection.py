@@ -24,7 +24,8 @@ while True:
     #loop through each faces in this video
     for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
         matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
-        name = "UNKNOWN"
+        cv2.rectangle(frame, (left, top), (right,bottom), (0,0,255), 2)
+        name = "Unknown"
         
         
         if True in matches:
